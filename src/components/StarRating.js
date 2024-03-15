@@ -4,10 +4,16 @@ const containerStyle = {
   display: "flex",
   alignItems: "center",
   gap: "16px",
+  flexWrap: "wrap",
+  justifyContent: "center",
+  alignItems: "center",
 };
 
 const starContainerStyle = {
   display: "flex",
+  flexWrap: "wrap",
+  justifyContent: "center",
+  alignItems: "center",
 };
 
 export default function StarRating({

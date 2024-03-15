@@ -33,10 +33,12 @@ body {
 
 .nav-bar {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   align-items: center;
-  height: 7.2rem;
-  padding: 0 3.2rem;
+  justify-content: center;
+  gap: 20px;
+  height: auto;
+  padding: 1rem 3.2rem;
   background-color: var(--color-primary);
   border-radius: 0.9rem;
 }
@@ -47,15 +49,17 @@ body {
   display: flex;
   gap: 2.4rem;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .box {
-  width: 42rem;
-  max-width: 42rem;
+  width: 400px;
+  max-width: 100%;
   background-color: var(--color-background-500);
   border-radius: 0.9rem;
   overflow: auto;
   position: relative;
+  height: 90vh;
 }
 
 .loader {
@@ -78,6 +82,7 @@ body {
   display: flex;
   align-items: center;
   gap: 0.8rem;
+  justify-content: center;
 }
 
 .logo span {
@@ -96,7 +101,6 @@ body {
   padding: 1.1rem 1.6rem;
   font-size: 1.8rem;
   border-radius: 0.7rem;
-  width: 40rem;
   transition: all 0.3s;
   color: var(--color-text);
 
@@ -117,6 +121,7 @@ body {
 .num-results {
   justify-self: end;
   font-size: 1.8rem;
+  margin: 0 auto;
 }
 
 .btn-toggle {
@@ -150,12 +155,12 @@ body {
   display: grid;
   grid-template-columns: 4rem 1fr;
   grid-template-rows: auto auto;
-  column-gap: 2.4rem;
   font-size: 1.6rem;
   align-items: center;
 
-  padding: 1.6rem 3.2rem;
   border-bottom: 1px solid var(--color-background-100);
+  column-gap: 1rem;
+  padding: 10px;
 }
 
 .list.list-movies li {
@@ -178,8 +183,10 @@ body {
 
 .list div {
   display: flex;
-  align-items: center;
   gap: 2.4rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .list p {
@@ -190,8 +197,10 @@ body {
 
 .btn-delete {
   position: absolute;
-  right: 2.4rem;
-
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  
   height: 1.8rem;
   aspect-ratio: 1;
   border-radius: 50%;
@@ -229,6 +238,9 @@ body {
   gap: 2.4rem;
   font-size: 1.6rem;
   font-weight: 600;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .summary p {
@@ -268,6 +280,27 @@ body {
   gap: 1.4rem;
 }
 
+@media only screen and (max-width: 420px) {
+  .details img {
+    margin: 0 auto;
+  }
+  .details header {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .details-overview {
+    width: 100%;
+    padding: 2.4rem 3rem;
+    background-color: var(--color-background-100);
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+  }
+  
+  
+}
+
 .details-overview h2 {
   font-size: 2.4rem;
   margin-bottom: 0.4rem;
@@ -283,12 +316,13 @@ body {
 .rating {
   background-color: var(--color-background-100);
   border-radius: 0.9rem;
-  padding: 2rem 2.4rem;
+  padding: 5px;
   margin-bottom: 0.8rem;
   font-weight: 600;
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
+  text-align: center;
 }
 
 .btn-add {
